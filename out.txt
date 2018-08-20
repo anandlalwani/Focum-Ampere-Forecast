@@ -1,0 +1,13 @@
+nohup: ignoring input
+/home/ubuntu/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "main.py", line 2, in <module>
+    from lstm import run_lstm
+  File "/home/ubuntu/Focum-Ampere-Forecast/lstm.py", line 5, in <module>
+    from data import load_data
+  File "/home/ubuntu/Focum-Ampere-Forecast/data.py", line 33
+    print power_consumption
+                          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(power_consumption)?

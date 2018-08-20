@@ -47,15 +47,15 @@ def run_lstm(model, sequence_length, prediction_steps):
             model.fit(x_train, y_train, batch_size=128, epochs=epochs, validation_split=0.05)
             predicted = model.predict(x_test)
             # predicted = np.reshape(predicted, (predicted.size,))
-            model.save('LSTM_power_consumption_model.h5')  # save LSTM model
+            model.save('16515_24hours__model.h5')  # save LSTM model
         except KeyboardInterrupt:  # save model if training interrupted by user
             print('Duration of training (s) : ', time.time() - global_start_time)
-            model.save('LSTM_power_consumption_model.h5')
+            model.save('16515__24hours__model.h5')
             return model, y_test, 0
     else:  # previously trained mode is given
         print('Loading model...')
         predicted = model.predict(x_test)
-    plot_predictions(result_mean, prediction_steps, predicted, y_test, global_start_time)
+ #   plot_predictions(result_mean, prediction_steps, predicted, y_test, global_start_time)
 
     return None
 

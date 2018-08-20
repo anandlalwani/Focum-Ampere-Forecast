@@ -9,7 +9,7 @@ def load_data(dataset_path, sequence_length=60, prediction_steps=5, ratio_of_dat
     #     data_file = csv.reader(file, delimiter=";")
     #     power_consumption = []
     #     number_of_values = 0
-    with open('SQ3-1.1.1.1-7-20160819 modified.csv', 'rU') as f:
+    with open('SQ3-2.1.1.2-37-16515 modified convolve N=20', 'rU') as f:
       reader = csv.reader(f)
       your_list = list(reader)
 
@@ -18,9 +18,8 @@ def load_data(dataset_path, sequence_length=60, prediction_steps=5, ratio_of_dat
     Demandpred=[]
     power_consumption=[]
 
-    for i in range(1,len(your_list)):
-        
-        power_consumption.append(float(your_list[i][7]))    #     for line in data_file:
+    for i in range(1,len(your_list)):        
+        power_consumption.append(float(your_list[i][0]))    #     for line in data_file:
             # try:
             #     power_consumption.append(float(line[7]))
             #     number_of_values += 1
@@ -30,7 +29,7 @@ def load_data(dataset_path, sequence_length=60, prediction_steps=5, ratio_of_dat
             #     break
 
     print('Loaded data from csv.')
-    print power_consumption
+    print(power_consumption)
     windowed_data = []
     # Format data into rolling window sequences
     for index in range(len(power_consumption) - sequence_length):  # for e.g: index=0 => 123, index=1 => 234 etc.

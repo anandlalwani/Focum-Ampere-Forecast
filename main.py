@@ -7,6 +7,6 @@ if __name__ == '__main__':
         model = load_model('LSTM_power_consumption_model.h5')
     else:
         model = None
-    sequence_length = 2000  # number of past minutes of data for model to consider
-    prediction_steps = 10  # number of future minutes of data for model to predict
+    sequence_length = 7200  # number of past minutes of data for model to consider
+    prediction_steps = 720  # number of future minutes of data for model to predict
     run_lstm(model, sequence_length, prediction_steps)
